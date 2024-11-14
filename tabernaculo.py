@@ -23,6 +23,10 @@ shekel_to_kg = 0.0114  # 1 shekel ≈ 11.4 g
 tickers_yf = [info["ticker"] for info in tickers.values()]
 prices = yf.download(tickers=tickers_yf, period="1d", progress=False)["Close"]
 
+if prices.empty:
+    print("Failed to retrieve prices.")
+    exit()
+
 # Get USD/BRL exchange rate
 usd_brl = yf.Ticker("BRL=X")
 usd_brl_rate = usd_brl.history(period="1d")["Close"].iloc[0]
