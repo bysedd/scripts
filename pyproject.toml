@@ -3,7 +3,6 @@ name = "scripts"
 version = "0.1.0"
 description = "General purpose Python scripts"
 authors = ["Felippe A."]
-readme = "README.md"
 package-mode = false
 
 [tool.poetry.dependencies]
@@ -14,6 +13,7 @@ yfinance = "^0.2.49"
 mypy = "^1.13.0"
 ruff = "^0.7.3"
 ruff-lsp = "^0.0.58"
+pre-commit = "^4.0.1"
 
 [tool.mypy]
 ignore_missing_imports = true
